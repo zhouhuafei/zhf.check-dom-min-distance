@@ -15,6 +15,8 @@ function checkDomMinDistance(element, elementList) {
     var domCenterY = domTop + domHeight / 2;
     var minDistanceDom = null;
     var minDistance = null;
+    var minCenterX = null;
+    var minCenterY = null;
     list.forEach(function (item) {
         if (dom !== item) {
             // 排除自身
@@ -30,17 +32,35 @@ function checkDomMinDistance(element, elementList) {
             if (minDistance === null) {
                 minDistance = nowMinDistance;
                 minDistanceDom = item;
+                minCenterX = itemCenterX;
+                minCenterY = itemCenterY;
             } else {
                 if (minDistance > nowMinDistance) {
                     minDistance = nowMinDistance;
                     minDistanceDom = item;
+                    minCenterX = itemCenterX;
+                    minCenterY = itemCenterY;
                 }
             }
         }
     });
+    var domPositionX = 'overlay';
+    var domPositionY = 'overlay';
+    if (domCenterX - minCenterX > 0) {
+        domPositionX = 'right';
+    } else if (domCenterX - minCenterX < 0) {
+        domPositionX = 'left';
+    }
+    if (domCenterY - minCenterY > 0) {
+        domPositionY = 'bottom';
+    } else if (domCenterY - minCenterY < 0) {
+        domPositionY = 'top';
+    }
     return {
         dom: minDistanceDom,
-        distance: minDistance
+        distance: minDistance,
+        domPositionX: domPositionX,
+        domPositionY: domPositionY
     };
 }
 
