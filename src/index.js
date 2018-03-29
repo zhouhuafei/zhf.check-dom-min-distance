@@ -11,10 +11,13 @@ function checkDomMinDistance(element, elementList) {
     const domHeight = dom.offsetHeight;
     const domCenterX = domLeft + domWidth / 2;
     const domCenterY = domTop + domHeight / 2;
+    let domPositionX = 'overlay';
+    let domPositionY = 'overlay';
     let minDistanceDom = null;
     let minDistance = null;
     let minCenterX = null;
     let minCenterY = null;
+    // 找最近的dom
     list.forEach(function (item) {
         if (dom !== item) { // 排除自身
             const itemLeft = offset(item).left;
@@ -41,8 +44,7 @@ function checkDomMinDistance(element, elementList) {
             }
         }
     });
-    let domPositionX = 'overlay';
-    let domPositionY = 'overlay';
+    // 计算位置
     if (domCenterX - minCenterX > 0) {
         domPositionX = 'right';
     } else if (domCenterX - minCenterX < 0) {
@@ -53,6 +55,7 @@ function checkDomMinDistance(element, elementList) {
     } else if (domCenterY - minCenterY < 0) {
         domPositionY = 'top';
     }
+    // 返回结果
     return {
         dom: minDistanceDom,
         distance: minDistance,
