@@ -1,7 +1,7 @@
 const offset = require('zhf.offset');
 const getDomArray = require('zhf.get-dom-array');
 
-// 检测当前dom距离某个dom集合里的哪个元素最近
+// 当前dom的中心点距离dom集合里哪个dom的中心点最近
 function checkDomMinDistance(element, elementList) {
     const dom = getDomArray(element)[0];
     const list = getDomArray(elementList);

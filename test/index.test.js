@@ -1,5 +1,5 @@
 const checkDomMinDistance = require('../dist/index.min');
 
-test(`检测当前dom距离某个dom集合里的哪个元素最近`, () => {
+test(`当前dom的中心点距离dom集合里哪个dom的中心点最近`, () => {
     expect(true).toEqual(true);
 });

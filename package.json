@@ -1,7 +1,7 @@
 {
     "name": "zhf.check-dom-min-distance",
     "version": "1.0.0",
-    "description": "检测当前dom距离某个dom集合里的哪个元素最近",
+    "description": "当前dom的中心点距离dom集合里哪个dom的中心点最近",
     "main": "dist/index.min.js",
     "scripts": {
         "codeLint": "eslint --ext .js,.vue,.html ./",

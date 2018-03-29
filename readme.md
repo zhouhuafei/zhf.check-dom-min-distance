@@ -1,4 +1,9 @@
-# 检测当前dom距离某个dom集合里的哪个元素最近
+# 当前dom的中心点距离dom集合里哪个dom的中心点最近
 ```
 const checkDomMinDistance = require('zhf.check-dom-min-distance');
+
+const result = checkDomMinDistance(dom, NodeList);
 ```
+* 返回值result是一个对象，对象上有两个属性：
+    - dom：NodeList集合中，距离dom中心点最近的那个元素
+    - distance：那个元素与dom之间的距离（绝对值）
