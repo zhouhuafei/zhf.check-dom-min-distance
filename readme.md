@@ -6,4 +6,4 @@ const result = checkDomMinDistance(dom, NodeList);
 ```
 * 返回值result是一个对象，对象上有两个属性：
     - dom：NodeList集合中，距离dom中心点最近的那个元素
-    - distance：那个元素与dom之间的距离（绝对值）
+    - distance：那个元素的中心点与dom的中心点之间的距离（绝对值）
